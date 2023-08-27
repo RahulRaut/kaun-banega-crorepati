@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kaun Banega Crorepati</title>
+  </head>
+  <body>
+    <h1>Kaun Banega Crorepati</h1>
+    <script>
+      var score = 0;
+      var userName = prompt("What is your first name?");
+
+      alert("Welcome " + userName + " to Kaun Banega Crorepati");
+
+      function play(question, answer) {
+        var userAnswer = prompt(question);
+        if (userAnswer.toUpperCase() === answer.toUpperCase()) {
+          alert("Correct!");
+          score = score + 1;
+        } else {
+          alert("Wrong!!");
+          score = score - 1;
+        }
+        alert("Current Score: " + score);
+      }
+
+      var questions = [
+        {
+          question: "Where does Rahul live?",
+          answer: "Merces",
+        },
+        {
+          question: "Where does Rahul work?",
+          answer: "Webware",
+        },
+        {
+          question: "Do you know Rahul's favorite cricketer?",
+          answer: "Virat",
+        },
+        {
+          question: "Do you know Rahul's favorite IPL team?",
+          answer: "RCB",
+        },
+        {
+          question: "Do you know Rahul's favorite fruit?",
+          answer: "Apple",
+        },
+      ];
+
+      for (var i = 0; i < questions.length; i++) {
+        var currentQuestion = questions[i];
+        play(currentQuestion.question, currentQuestion.answer);
+      }
+
+      alert("Total score: " + score);
+    </script>
+  </body>
+</html>
